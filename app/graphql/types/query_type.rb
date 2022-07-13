@@ -8,7 +8,15 @@ module Types
     # They will be entry points for queries on your schema.
 
     # TODO: remove me
-    field :blog, BlogType, null: false
+    field :test_field, String, null: false,
+      description: "An example field added by the generator"
+    def test_field
+      # "Hello World!"
+      context[:blog]
+    end
+
+    field :blog, BlogType, null: true
+    # byebug
     def blog
       context[:blog]
     end
